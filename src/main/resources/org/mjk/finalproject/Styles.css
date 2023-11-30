@@ -3,3 +3,35 @@
 
 
                                                        /* CSS */
+
+.teaSelect .teaSelectBtn {
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 28px; /* Adjust background radius to fit inside border */
+
+
+}
+
+
+
+#teaType {
+    -fx-font-size: 30px;
+    -fx-font-family: 'Bebas Neue';
+    -fx-text-fill: #8c9178;
+}
+
+.centerHbox .centerBtns{
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 28px; /* Adjust background radius to fit inside border */
+    -fx-padding: 8px 16px;
+}
+
