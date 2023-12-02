@@ -28,10 +28,19 @@
     -fx-background-color: #fbeee0;
     -fx-border-color: #D1C7AE;
     -fx-border-style: solid;
-    -fx-border-width: 2px;
+    -fx-border-width: 1.5px;
     -fx-border-radius: 30px;
     -fx-cursor: hand;
-    -fx-background-radius: 28px; /* Adjust background radius to fit inside border */
-    -fx-padding: 8px 16px;
+    -fx-background-radius: 25px; /* Adjust background radius to fit inside border */
+    -fx-padding: 6px 12px;
 }
-
+.centerBtns{
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 25px; /* Adjust background radius to fit inside border */
+    -fx-padding: 6px 12px;
+}

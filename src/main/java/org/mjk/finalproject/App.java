@@ -2,8 +2,12 @@ package org.mjk.finalproject;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +17,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+
         stage.setTitle("Tea Timer");
         stage.setScene(scene);
         stage.setMinWidth(800); // Minimum width
@@ -22,7 +27,9 @@ public class App extends Application {
         stage.show();
 
 
+
     }
+
 
     public static void main(String[] args) {
         launch();
