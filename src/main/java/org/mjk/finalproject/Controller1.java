@@ -21,9 +21,14 @@ public class Controller1 {
     private Button STARTbtn; //start button
     @FXML
     private Label typeLabel; //This label indicates tea type in center of screen
+    @FXML
+    private Label infusionCounts;
     int brewTime = 15; //default total time in seconds
     private int timeMilliseconds = brewTime * 1000; // Convert seconds to ms
     private Timeline timeline; //Init timeline for countdown
+
+    private int infusionCounter = 1;
+    private int nextInfusionDuration;
 
     public void initialize() {
 
@@ -80,9 +85,23 @@ public class Controller1 {
 
     //logic for pressing buttons
     private void updateTeaInfo(String teaName, int firstInfusion, int nextInfusion, int infusions, List<Double> amounts) { //List represents grams needed: not incorporated yet
+        //Check if timer is still running and stop it if it is
+        if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
+            timeline.stop();
+            STARTbtn.setText("Start");
+            teaType.setText("00:00:000");
+        }
+
+
+
         // Update the teaTypeLabel to display the selected tea type
         typeLabel.setText(teaName);
         brewTime = firstInfusion;
+        nextInfusionDuration = nextInfusion; //this allows the variable to be used outside of this scope
+        infusionCounter = 1;
+        infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
+
+        timeMilliseconds = brewTime * 1000; //Resets time allowing user to change teaType while paused
     }
 
 
@@ -101,6 +120,7 @@ public class Controller1 {
                 }
             }
 
+
         }
 
         private void startTimer() {
@@ -113,11 +133,24 @@ public class Controller1 {
                 String timerDisplay = String.format("%02d:%02d:%03d", minutes, seconds, milliseconds);
                 System.out.println(timerDisplay);
                 teaType.setText(timerDisplay); //Format the label
-                if (timeMilliseconds <= 0) {
+                if (timeMilliseconds <= 0) { //  Add logic for when the timer reaches 0
                     timeline.stop();
-                    timeMilliseconds = brewTime * 1000;
                     STARTbtn.setText("Start"); // Change button back to start
-                    //  Add logic for when the timer reaches 0
+
+
+
+                    //increment infusions
+                    infusionCounter++;
+                    int infusions = Integer.parseInt(infusionCounts.getText().split(" / ")[1]);
+                    infusionCounts.setText("Infusions: " + infusionCounter + " / " + infusions);
+
+                    //update brewtime
+                    if(infusionCounter <= infusions){
+                        brewTime += nextInfusionDuration;
+                    }
+
+
+                    timeMilliseconds = brewTime * 1000; // Reset timeMilliseconds for the new brewTime
                 }
             }));
             timeline.setCycleCount(brewTime * 1000); // Repeat indefinitely

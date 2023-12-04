@@ -74,7 +74,7 @@
                      <Font name="Noto Sans Bold" size="16.0" />
                   </font>
                </Label>
-               <Label styleClass="infusionCount" text="Infusions">
+               <Label fx:id="infusionCounts" styleClass="infusionCount" text="Infusions">
                   <font>
                      <Font name="Noto Sans Regular" size="12.0" />
                   </font>
