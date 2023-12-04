@@ -44,3 +44,11 @@
     -fx-background-radius: 25px; /* Adjust background radius to fit inside border */
     -fx-padding: 6px 12px;
 }
+
+.typeLabel{
+    -fx-text-fill: #8c9178;
+}
+
+.infusionCount{
+    -fx-text-fill: #8c9178;
+}

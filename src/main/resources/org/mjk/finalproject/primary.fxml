@@ -26,39 +26,39 @@
    <right>
       <AnchorPane prefHeight="318.0" prefWidth="74.0" style="-fx-background-color: #E9EDC9;" styleClass="teaSelect" BorderPane.alignment="CENTER">
          <children>
-            <Button id="green" layoutX="10.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="teaSelectBtn" text="Green">
+            <Button id="green" layoutX="10.0" layoutY="2.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="teaSelectBtn" text="Green" onAction="#handleGreenTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="blackS" layoutX="11.0" layoutY="37.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Black (small)">
+            <Button id="blackS" layoutX="11.0" layoutY="37.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Black (small)" onAction="#handleBlackSmallLeafTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="11.5" />
                </font></Button>
-            <Button id="blackL" layoutX="11.0" layoutY="72.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Black (large)">
+            <Button id="blackL" layoutX="11.0" layoutY="72.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Black (large)" onAction="#handleBlackLargeLeafTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="white" layoutX="11.0" layoutY="107.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="White">
+            <Button id="white" layoutX="11.0" layoutY="107.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="White" onAction="#handleWhiteTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="yellow" layoutX="11.0" layoutY="142.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Yellow">
+            <Button id="yellow" layoutX="11.0" layoutY="142.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Yellow" onAction="#handleYellowTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="oolongS" layoutX="11.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="teaSelectBtn" text="Oolong (strip)">
+            <Button id="oolongS" layoutX="11.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" styleClass="teaSelectBtn" text="Oolong (strip)" onAction="#handleOolongStripTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="11.5" />
                </font></Button>
-            <Button id="oolongB" layoutX="11.0" layoutY="212.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Oolong (ball)">
+            <Button id="oolongB" layoutX="11.0" layoutY="212.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Oolong (ball)" onAction="#handleOolongBallTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="puerRipe" layoutX="11.0" layoutY="246.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Pu-er (ripe)">
+            <Button id="puerRipe" layoutX="11.0" layoutY="246.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Pu-er (ripe)" onAction="#handlePuErhRipeTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
-            <Button id="puerRaw" layoutX="11.0" layoutY="280.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Pu-er (raw)">
+            <Button id="puerRaw" layoutX="11.0" layoutY="280.0" mnemonicParsing="false" prefWidth="95.0" styleClass="teaSelectBtn" text="Pu-er (raw)" onAction="#handlePuErhRawTeaButton">
                <font>
                   <Font name="Noto Sans Regular" size="12.0" />
                </font></Button>
@@ -67,15 +67,29 @@
    </right>
    <center>
       <VBox alignment="CENTER">
+         <VBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="493.0">
+            <children>
+               <Label fx:id="typeLabel" styleClass="typeLabel" text="Tea">
+                  <font>
+                     <Font name="Noto Sans Bold" size="16.0" />
+                  </font>
+               </Label>
+               <Label styleClass="infusionCount" text="Infusions">
+                  <font>
+                     <Font name="Noto Sans Regular" size="12.0" />
+                  </font>
+               </Label>
+            </children>
+         </VBox>
          <Label fx:id="teaType" stylesheets="@Styles.css" text="Label" translateY="-60.0" BorderPane.alignment="CENTER">
             <font>
-               <Font name="Bebas Neue Regular" size="27.0" />
+               <Font name="Bebas Neue Regular" size="35.0" />
             </font>
             <VBox.margin>
                <Insets />
             </VBox.margin>
          </Label>
-         <Button id="STARTbtn" mnemonicParsing="false" onAction="#handleStartButton" styleClass="centerBtns" text="Start" translateY="-20.0" />
+         <Button fx:id="STARTbtn" mnemonicParsing="false" onAction="#handleStartButton" styleClass="centerBtns" text="Start" translateY="-20.0" />
          <HBox alignment="CENTER" spacing="10.0" styleClass="centerHbox">
             <Button styleClass="centerBtns" text="Button 1" />
             <Button styleClass="centerBtns" text="Button 2" />
