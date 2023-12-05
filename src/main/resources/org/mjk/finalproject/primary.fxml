@@ -16,8 +16,8 @@
                   <Font name="Bebas Neue Regular" size="30.0" />
                </font>
             </Label>
-            <SVGPath  onMouseClicked="#closeApp" content="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" fill="#8c9178" layoutX="391.0" layoutY="-237.0" scaleX="0.05" scaleY="0.05" />
-            <SVGPath  onMouseClicked="#minimizeApp" content="M32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z" fill="#8c9178" layoutX="289.0" layoutY="-429.0" scaleX="0.05" scaleY="0.05" />
+            <SVGPath content="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" fill="#8c9178" layoutX="391.0" layoutY="-237.0" onMouseClicked="#closeApp" scaleX="0.05" scaleY="0.05" />
+            <SVGPath content="M32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z" fill="#8c9178" layoutX="289.0" layoutY="-429.0" onMouseClicked="#minimizeApp" scaleX="0.05" scaleY="0.05" />
          </children>
       </AnchorPane>
    </top>
@@ -92,12 +92,12 @@
                <Font name="Noto Sans Regular" size="12.0" />
             </font></Button>
          <HBox alignment="CENTER" spacing="10.0" styleClass="centerHbox">
-            <Button styleClass="centerBtns" text="Previous">
+            <Button fx:id="previous" onAction="#handlePrevious" styleClass="centerBtns" text="Previous">
             <font>
                <Font name="Noto Sans Regular" size="12.0" />
             </font>
             </Button>
-            <Button styleClass="centerBtns" text="Skip">
+            <Button fx:id="skip" onAction="#handleSkip" styleClass="centerBtns" text="Skip">
             <font>
                <Font name="Noto Sans Regular" size="12.0" />
             </font>

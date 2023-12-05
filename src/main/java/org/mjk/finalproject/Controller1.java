@@ -28,10 +28,15 @@ public class Controller1 {
     private Label infusionCounts;
     @FXML
     private BorderPane borderpane;
+    @FXML
+    private Button previous;
+    @FXML
+    private Button skip;
     int brewTime = 15; //default total time in seconds
     private int timeMilliseconds = brewTime * 1000; // Convert seconds to ms
     private Timeline timeline; //Init timeline for countdown
     private int infusionCounter = 1;
+    private int infusions;
     private int nextInfusionDuration;
 
     //Add borderpane functionality (drag, pressed)
@@ -114,11 +119,41 @@ public class Controller1 {
         updateTeaInfo("PuErh (ripe)", 10, 5, 20, List.of(5.0));
     }
 
+    //Previous and Skip Functionality
+    @FXML
+    private void handlePrevious(ActionEvent event){
+        if( infusionCounter > 1){ //I am choosing to allow the user to oversteep the tea, as I sometimes do the same
+            infusionCounter--;
+            infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
+
+            System.out.println("Before Subtraction - brewTime: " + brewTime + ", nextInfusionDuration: " + nextInfusionDuration);
+            brewTime -= nextInfusionDuration; // Subtraction here
+            timeMilliseconds = brewTime * 1000;
+            System.out.println("After Subtraction - brewTime: " + brewTime);
+
+        }
+
+    }
+    @FXML
+    private void handleSkip(ActionEvent event){
+        if( infusionCounter >= 1){ //I am choosing to allow the user to oversteep the tea, as I sometimes do the same
+            infusionCounter++;
+            infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
+
+            System.out.println("Before Subtraction - brewTime: " + brewTime + ", nextInfusionDuration: " + nextInfusionDuration);
+            brewTime += nextInfusionDuration; // Subtraction here
+            timeMilliseconds = brewTime * 1000;
+            System.out.println("After Subtraction - brewTime: " + brewTime);
+
+        }
+    }
+
 
     //logic for pressing buttons
     private void updateTeaInfo(String teaName, int firstInfusion, int nextInfusion, int infusions, List<Double> amounts) { //List represents grams needed: not incorporated yet
         //Check if timer is still running and stop it if it is
-       if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
+       this.infusions = infusions;
+        if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
             timeline.stop();
            // STARTbtn.setText("Start");
          //   teaType.setText("00:00:000");
@@ -166,7 +201,7 @@ public class Controller1 {
                 int seconds = (timeMilliseconds % (60 * 1000)) / 1000;
                 int milliseconds = timeMilliseconds % 1000;
                 String timerDisplay = String.format("%02d:%02d:%03d", minutes, seconds, milliseconds);
-                System.out.println(timerDisplay);
+              //DEBUG  System.out.println(timerDisplay);
                 teaType.setText(timerDisplay); //Format the label
                 if (timeMilliseconds <= 0) { //  Add logic for when the timer reaches 0
                     timeline.stop();
