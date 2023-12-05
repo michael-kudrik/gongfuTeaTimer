@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -18,6 +19,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
 
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Tea Timer");
         stage.setScene(scene);
         stage.setMinWidth(800); // Minimum width

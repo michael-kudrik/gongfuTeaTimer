@@ -7,14 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.SVGPath;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Controller1 {
-
+//              Add the fxml elements to controller file
     @FXML
     private Label teaType;
     @FXML
@@ -23,12 +26,41 @@ public class Controller1 {
     private Label typeLabel; //This label indicates tea type in center of screen
     @FXML
     private Label infusionCounts;
+    @FXML
+    private BorderPane borderpane;
     int brewTime = 15; //default total time in seconds
     private int timeMilliseconds = brewTime * 1000; // Convert seconds to ms
     private Timeline timeline; //Init timeline for countdown
-
     private int infusionCounter = 1;
     private int nextInfusionDuration;
+
+    //Add borderpane functionality (drag, pressed)
+    private double borderX = 0;
+    private double borderY = 0;
+
+    //methods
+    @FXML
+    private void borderpane_dragged(MouseEvent event){ //Move borderpane when dragged
+        Stage stage = (Stage) borderpane.getScene().getWindow();
+        stage.setY(event.getScreenY() - borderY);
+        stage.setX(event.getScreenX() - borderX);
+    }
+
+    @FXML
+    private void borderpane_pressed(MouseEvent event){ //sets starting point based off mouseclick
+        borderX = event.getSceneX();
+        borderY = event.getSceneY();
+    }
+
+    //Exit functionality
+    public void closeApp(MouseEvent mouseEvent) { //making this public might be an issue IDK, I had to get the onpressed to work
+        Stage stage = (Stage) borderpane.getScene().getWindow();
+        stage.close();
+    }                                   //These SVGs are hard to press, might want to use imageview or put a square ontop of
+    public void minimizeApp(MouseEvent mouseEvent) {
+        Stage stage = (Stage) borderpane.getScene().getWindow();
+        stage.setIconified(true);
+    }
 
     public void initialize() {
 
@@ -114,7 +146,7 @@ public class Controller1 {
                 startTimer(); //start the timer because not alr running
                 STARTbtn.setText("Pause");
             } else {
-                if (timeline.getStatus() == Animation.Status.RUNNING) { //if running and presed change to resume
+                if (timeline.getStatus() == Animation.Status.RUNNING) { //if running and pressed change to resume
                     timeline.pause();
                     STARTbtn.setText("Resume");
                 } else { // if not running resume and change to pause
@@ -163,7 +195,4 @@ public class Controller1 {
 
 
 
-
-
-
-    }
+}
