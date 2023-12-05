@@ -86,11 +86,14 @@ public class Controller1 {
     //logic for pressing buttons
     private void updateTeaInfo(String teaName, int firstInfusion, int nextInfusion, int infusions, List<Double> amounts) { //List represents grams needed: not incorporated yet
         //Check if timer is still running and stop it if it is
-        if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
+       if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
             timeline.stop();
-            STARTbtn.setText("Start");
-            teaType.setText("00:00:000");
+           // STARTbtn.setText("Start");
+         //   teaType.setText("00:00:000");
         }
+
+        STARTbtn.setText("Start");
+        teaType.setText("00:00:000");
 
 
 
