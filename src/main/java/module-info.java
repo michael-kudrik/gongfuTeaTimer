@@ -1,6 +1,7 @@
 module org.mjk.finalproject {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.media;
 
 
 

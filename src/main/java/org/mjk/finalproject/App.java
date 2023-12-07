@@ -19,7 +19,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 600);
 
-        Image appIcon = new Image("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSN6UqNFpH-ZvJQcU6AvK_WCkERTv9mo8BfrPjDgOBizTALvOFV");
+        Image appIcon = new Image(getClass().getResourceAsStream("/org/mjk/finalproject/mugPNG.png"));
         stage.initStyle(StageStyle.UNDECORATED);
         stage.setTitle("Tea Timer");
         stage.getIcons().add(appIcon);
