@@ -48,6 +48,21 @@ public class Controller1 {
     private double borderX = 0;
     private double borderY = 0;
 
+    //audio
+
+
+    File TeaDone = new File("src/main/resources/org/mjk/finalproject/TeaDone.m4a");
+    File TeaWarning = new File("src/main/resources/org/mjk/finalproject/WarningTea.m4a");
+    Media media = new Media(TeaDone.toURI().toString());
+    Media media2 = new Media(TeaWarning.toURI().toString());
+    MediaPlayer mediaPl = new MediaPlayer(media);
+    MediaPlayer mediaPl2 = new MediaPlayer(media2);
+
+
+
+    File teaDoneFile = new File("src/main/resources/org/mjk/finalproject/TeaDone.mp3");
+    File teaWarningFile = new File("src/main/resources/org/mjk/finalproject/WarningTea.mp3");
+
     //methods
     @FXML
     private void borderpane_dragged(MouseEvent event){ //Move borderpane when dragged
@@ -210,6 +225,8 @@ public class Controller1 {
                 teaType.setText(timerDisplay); //Format the label
                 if (timeMilliseconds <= 0) { //  Add logic for when the timer reaches 0
                     timeline.stop();
+                    mediaPl.seek(Duration.ZERO); // this pretty much resets to start
+                    mediaPl.play();
                     STARTbtn.setText("Start"); // Change button back to start
 
 
@@ -226,6 +243,10 @@ public class Controller1 {
 
 
                     timeMilliseconds = brewTime * 1000; // Reset timeMilliseconds for the new brewTime
+                }
+                if(timeMilliseconds == 5000){
+                    mediaPl2.seek(Duration.ZERO); // this pretty much resets to start
+                    mediaPl2.play();
                 }
             }));
             timeline.setCycleCount(brewTime * 1000); // Repeat indefinitely
