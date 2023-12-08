@@ -37,6 +37,8 @@ public class Controller1 {
     private Button previous;
     @FXML
     private Button skip;
+    @FXML
+    private Label teaAmount;
     int brewTime = 15; //default total time in seconds
     private int timeMilliseconds = brewTime * 1000; // Convert seconds to ms
     private Timeline timeline; //Init timeline for countdown
@@ -95,48 +97,48 @@ public class Controller1 {
 
     @FXML
     private void handleGreenTeaButton(ActionEvent event) {
-        updateTeaInfo("Green", 15, 3, 5, List.of(3.0, 3.5)); //List represents grams needed: not incorporated yet
+        updateTeaInfo("Green", 15, 3, 5, "3 - 3.5");
 
     }
 
     @FXML
     private void handleBlackSmallLeafTeaButton(ActionEvent event) {
-        updateTeaInfo("Black (small leaf)", 10, 5, 8, List.of(4.5));
+        updateTeaInfo("Black (small leaf)", 10, 5, 8, "4.5");
     }
 
     @FXML
     private void handleBlackLargeLeafTeaButton(ActionEvent event) {
-        updateTeaInfo("Black (large leaf)", 15, 5, 8, List.of(4.0));
+        updateTeaInfo("Black (large leaf)", 15, 5, 8, "4");
     }
 
     @FXML
     private void handleWhiteTeaButton(ActionEvent event) {
-        updateTeaInfo("White", 20, 5, 5, List.of(3.5, 4.0));
+        updateTeaInfo("White", 20, 5, 5, "3.5 - 4");
     }
 
     @FXML
     private void handleYellowTeaButton(ActionEvent event) {
-        updateTeaInfo("Yellow", 15, 5, 5, List.of(3.5, 4.0));
+        updateTeaInfo("Yellow", 15, 5, 5, "3.5 - 4");
     }
 
     @FXML
     private void handleOolongStripTeaButton(ActionEvent event) {
-        updateTeaInfo("Oolong (strip)", 20, 5, 9, List.of(4.5, 5.0));
+        updateTeaInfo("Oolong (strip)", 20, 5, 9, "4.5 - 5");
     }
 
     @FXML
     private void handleOolongBallTeaButton(ActionEvent event) {
-        updateTeaInfo("Oolong (ball)", 25, 5, 9, List.of(6.0, 6.5));
+        updateTeaInfo("Oolong (ball)", 25, 5, 9, "6 - 6.5");
     }
 
     @FXML
     private void handlePuErhRawTeaButton(ActionEvent event) {
-        updateTeaInfo("PuErh (raw)", 10, 3, 15, List.of(5.0));
+        updateTeaInfo("PuErh (raw)", 10, 3, 15, "5");
     }
 
     @FXML
     private void handlePuErhRipeTeaButton(ActionEvent event) {
-        updateTeaInfo("PuErh (ripe)", 10, 5, 20, List.of(5.0));
+        updateTeaInfo("PuErh (ripe)", 10, 5, 20, "5");
     }
 
     //Previous and Skip Functionality
@@ -170,7 +172,7 @@ public class Controller1 {
 
 
     //logic for pressing buttons
-    private void updateTeaInfo(String teaName, int firstInfusion, int nextInfusion, int infusions, List<Double> amounts) { //List represents grams needed: not incorporated yet
+    private void updateTeaInfo(String teaName, int firstInfusion, int nextInfusion, int infusions, String amounts) {  //represents grams needed
         //Check if timer is still running and stop it if it is
        this.infusions = infusions;
         if (timeline != null && timeline.getStatus() == Animation.Status.RUNNING) {
@@ -187,6 +189,7 @@ public class Controller1 {
         // Update the teaTypeLabel to display the selected tea type
         typeLabel.setText(teaName);
         brewTime = firstInfusion;
+        teaAmount.setText(amounts);
         nextInfusionDuration = nextInfusion; //this allows the variable to be used outside of this scope
         infusionCounter = 1;
         infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
