@@ -96,54 +96,54 @@ public class Controller1 {
     //                                      HANDLE EACH TEA TYPE PRESS
 
     @FXML
-    private void handleGreenTeaButton(ActionEvent event) {
+    private void handleGreenTeaButton() {
         updateTeaInfo("Green", 15, 3, 5, "3 - 3.5");
 
     }
 
     @FXML
-    private void handleBlackSmallLeafTeaButton(ActionEvent event) {
+    private void handleBlackSmallLeafTeaButton() {
         updateTeaInfo("Black (small leaf)", 10, 5, 8, "4.5");
     }
 
     @FXML
-    private void handleBlackLargeLeafTeaButton(ActionEvent event) {
+    private void handleBlackLargeLeafTeaButton() {
         updateTeaInfo("Black (large leaf)", 15, 5, 8, "4");
     }
 
     @FXML
-    private void handleWhiteTeaButton(ActionEvent event) {
+    private void handleWhiteTeaButton() {
         updateTeaInfo("White", 20, 5, 5, "3.5 - 4");
     }
 
     @FXML
-    private void handleYellowTeaButton(ActionEvent event) {
+    private void handleYellowTeaButton() {
         updateTeaInfo("Yellow", 15, 5, 5, "3.5 - 4");
     }
 
     @FXML
-    private void handleOolongStripTeaButton(ActionEvent event) {
+    private void handleOolongStripTeaButton() {
         updateTeaInfo("Oolong (strip)", 20, 5, 9, "4.5 - 5");
     }
 
     @FXML
-    private void handleOolongBallTeaButton(ActionEvent event) {
+    private void handleOolongBallTeaButton() {
         updateTeaInfo("Oolong (ball)", 25, 5, 9, "6 - 6.5");
     }
 
     @FXML
-    private void handlePuErhRawTeaButton(ActionEvent event) {
+    private void handlePuErhRawTeaButton() {
         updateTeaInfo("PuErh (raw)", 10, 3, 15, "5");
     }
 
     @FXML
-    private void handlePuErhRipeTeaButton(ActionEvent event) {
+    private void handlePuErhRipeTeaButton() {
         updateTeaInfo("PuErh (ripe)", 10, 5, 20, "5");
     }
 
     //Previous and Skip Functionality
     @FXML
-    private void handlePrevious(ActionEvent event){
+    private void handlePrevious(){
         if( infusionCounter > 1){ //I am choosing to allow the user to oversteep the tea, as I sometimes do the same
             infusionCounter--;
             infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
@@ -157,7 +157,7 @@ public class Controller1 {
 
     }
     @FXML
-    private void handleSkip(ActionEvent event){
+    private void handleSkip(){
         if( infusionCounter >= 1){ //I am choosing to allow the user to oversteep the tea, as I sometimes do the same
             infusionCounter++;
             infusionCounts.setText(("Infusions: ")+ infusionCounter + " / " + infusions);
@@ -199,7 +199,7 @@ public class Controller1 {
 
 
         @FXML
-        private void handleStartButton (ActionEvent event){ // this comes from the onAction of the buttons fxml
+        private void handleStartButton (){ // this comes from the onAction of the buttons fxml
             if (timeline == null) {
                 startTimer(); //start the timer because not alr running
                 STARTbtn.setText("Pause");
