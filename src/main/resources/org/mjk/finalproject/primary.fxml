@@ -128,6 +128,7 @@
                   <Font name="Noto Sans Regular" size="13.0" />
                </font>
             </Label>
+            <SVGPath content="M 12.8 25.6 A 12.8 12.8 90 1 0 12.8 0 a 12.8 12.8 90 1 0 0 25.6 z M 10.8 16.8 h 1.2 V 13.6 H 10.8 c -0.665 0 -1.2 -0.535 -1.2 -1.2 s 0.535 -1.2 1.2 -1.2 h 2.4 c 0.665 0 1.2 0.535 1.2 1.2 v 4.4 h 0.4 c 0.665 0 1.2 0.535 1.2 1.2 s -0.535 1.2 -1.2 1.2 H 10.8 c -0.665 0 -1.2 -0.535 -1.2 -1.2 s 0.535 -1.2 1.2 -1.2 z m 2 -10.4 a 1.6 1.6 90 1 1 0 3.2 a 1.6 1.6 90 1 1 0 -3.2 z" fill="#8c9178" onMouseClicked="#handlePopup" scaleX="0.75" scaleY="0.75" translateX="-20.0" translateY="125.0" />
          </children>
       </VBox>
    </left>

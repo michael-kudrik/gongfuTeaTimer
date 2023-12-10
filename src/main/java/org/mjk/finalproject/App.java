@@ -17,7 +17,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("primary.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
         Image appIcon = new Image(getClass().getResourceAsStream("/org/mjk/finalproject/mugPNG.png"));
         stage.initStyle(StageStyle.UNDECORATED);
@@ -27,7 +27,7 @@ public class App extends Application {
         stage.setMinWidth(800); // Minimum width
         stage.setMinHeight(450); // Minimum height
         stage.setMaxWidth(1080); // Maximum width
-        stage.setMaxHeight(650); // Maximum height
+        stage.setMaxHeight(650); // Maximum height 650
         stage.show();
 
 

@@ -5,11 +5,18 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+//Imports To Load New Stage
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.SVGPath;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 //Import Audio
@@ -18,6 +25,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -256,6 +264,29 @@ public class Controller1 {
             timeline.play();
 
         }
+
+        //POPUP From Info Icon
+        @FXML
+        private void handlePopup() {
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("popup.fxml"));
+                Parent root = fxmlLoader.load();
+                Stage popupStage = new Stage();
+                popupStage.initModality(Modality.APPLICATION_MODAL); // Make the popup modal
+                popupStage.setTitle("Info");
+                popupStage.initModality(Modality.APPLICATION_MODAL);
+                popupStage.setScene(new Scene(root));
+                Image appIcon = new Image(getClass().getResourceAsStream("/org/mjk/finalproject/mugPNG.png"));
+                popupStage.getIcons().add(appIcon);
+                popupStage.setResizable(false);
+                popupStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+                //Check if popupfails (hopefully it won't lol)
+            }
+        }
+
+
 
 
 
