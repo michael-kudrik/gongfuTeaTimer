@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact name="finalproject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/finalproject_jar</output-path>
+    <root id="root">
+      <element id="archive" name="finalproject.jar">
+        <element id="module-output" name="finalproject" />
+      </element>
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-media:win:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:20.0.1" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:20.0.1" />
+    </root>
+  </artifact>
+</component>

@@ -278,6 +278,4 @@ public class Controller1 {
             //Check if popupfails (hopefully it won't lol)
         }
     }
-
-
 }
