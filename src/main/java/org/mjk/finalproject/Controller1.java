@@ -17,20 +17,23 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.io.IOException;
 
 public class Controller1 {
     int brewTime = 15; //default total time in seconds
     //audio
-    File TeaDone = new File("src/main/resources/org/mjk/finalproject/TeaDone.m4a");
-    File TeaWarning = new File("src/main/resources/org/mjk/finalproject/WarningTea.m4a");
-    Media media = new Media(TeaDone.toURI().toString());
-    MediaPlayer mediaPl = new MediaPlayer(media);
-    Media media2 = new Media(TeaWarning.toURI().toString());
-    MediaPlayer mediaPl2 = new MediaPlayer(media2);
-    File teaDoneFile = new File("src/main/resources/org/mjk/finalproject/TeaDone.mp3");
-    File teaWarningFile = new File("src/main/resources/org/mjk/finalproject/WarningTea.mp3");
+   // File TeaDone = new File("src/main/resources/org/mjk/finalproject/TeaDone.m4a");
+  //  File TeaWarning = new File("src/main/resources/org/mjk/finalproject/WarningTea.m4a");
+  //  Media media = new Media(TeaDone.toURI().toString());
+ //   MediaPlayer mediaPl = new MediaPlayer(media);
+    String teaDonePath = "/org/mjk/finalproject/TeaDone.m4a";
+    String warningTeaPath = "/org/mjk/finalproject/WarningTea.m4a";
+    Media teaDone = new Media(getClass().getResource(teaDonePath).toString());
+    Media warningTea = new Media(getClass().getResource(warningTeaPath).toString());
+    MediaPlayer mediaPl = new MediaPlayer(teaDone);
+    MediaPlayer mediaPl2 = new MediaPlayer(warningTea);
+   // File teaDoneFile = new File("src/main/resources/org/mjk/finalproject/TeaDone.mp3");
+   // File teaWarningFile = new File("src/main/resources/org/mjk/finalproject/WarningTea.mp3");
     //              Add the fxml elements to controller file
     @FXML
     private Label teaType;
@@ -42,10 +45,6 @@ public class Controller1 {
     private Label infusionCounts;
     @FXML
     private BorderPane borderpane;
-    @FXML
-    private Button previous;
-    @FXML
-    private Button skip;
     @FXML
     private Label teaAmount;
     @FXML
@@ -257,25 +256,4 @@ public class Controller1 {
         });
     }
 
-
-    //POPUP From Info Icon
-    @FXML
-    private void handlePopup() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("popup.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage popupStage = new Stage();
-            popupStage.initModality(Modality.APPLICATION_MODAL); // Make the popup modal
-            popupStage.setTitle("Info");
-            popupStage.initModality(Modality.APPLICATION_MODAL);
-            popupStage.setScene(new Scene(root));
-            Image appIcon = new Image(getClass().getResourceAsStream("/org/mjk/finalproject/mugPNG.png"));
-            popupStage.getIcons().add(appIcon);
-            popupStage.setResizable(false);
-            popupStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            //Check if popupfails (hopefully it won't lol)
-        }
-    }
 }

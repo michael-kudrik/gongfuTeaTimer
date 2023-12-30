@@ -26,10 +26,10 @@ public class App extends Application {
         stage.setTitle("Tea Timer");
         stage.getIcons().add(appIcon);
         stage.setScene(scene);
-        stage.setMinWidth(800); // Minimum width
-        stage.setMinHeight(450); // Minimum height
-        stage.setMaxWidth(1080); // Maximum width
-        stage.setMaxHeight(650); // Maximum height 650
+        stage.setMinWidth(600); // Minimum width
+        stage.setMinHeight(400); // Minimum height
+        stage.setMaxWidth(600); // Maximum width
+        stage.setMaxHeight(400); // Maximum height 650
         stage.show();
 
 
