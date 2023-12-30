@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: org.mjk.finalproject.Launcher
+Class-Path: javafx-graphics-20.0.1-win.jar javafx-media-20.0.1.jar javaf
+ x-fxml-20.0.1.jar javafx-fxml-20.0.1-win.jar javafx-controls-20.0.1.jar
+  javafx-controls-20.0.1-win.jar javafx-base-20.0.1.jar javafx-media-20.
+ 0.1-win.jar javafx-base-20.0.1-win.jar javafx-graphics-20.0.1.jar
+

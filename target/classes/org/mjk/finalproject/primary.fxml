@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            onMouseDragged="#borderpane_dragged" onMousePressed="#borderpane_pressed" prefHeight="400.0"
+            prefWidth="600.0" style="-fx-background-color: FEFAE0;" stylesheets="@Styles.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.mjk.finalproject.Controller1">
+    <top>
+        <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="600.0"
+                    style="-fx-background-color: #E9EDC9;" BorderPane.alignment="CENTER">
+            <children>
+                <SVGPath fx:id="teaSvg"
+                         content="M88 0C74.7 0 64 10.7 64 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C120.5 112.3 128 119.9 128 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C119.5 47.7 112 40.1 112 24c0-13.3-10.7-24-24-24zM32 192c-17.7 0-32 14.3-32 32V416c0 53 43 96 96 96H288c53 0 96-43 96-96h16c61.9 0 112-50.1 112-112s-50.1-112-112-112H352 32zm352 64h16c26.5 0 48 21.5 48 48s-21.5 48-48 48H384V256zM224 24c0-13.3-10.7-24-24-24s-24 10.7-24 24c0 38.9 23.4 59.4 39.1 73.1l1.1 1C232.5 112.3 240 119.9 240 136c0 13.3 10.7 24 24 24s24-10.7 24-24c0-38.9-23.4-59.4-39.1-73.1l-1.1-1C231.5 47.7 224 40.1 224 24z"
+                         fill="#8c9178" layoutX="-216.0" layoutY="-215.0" scaleX="0.1" scaleY="0.1"/>
+                <Label layoutX="83.0" layoutY="28.0" style="-fx-font-family: 'Bebas Neue';;" stylesheets="@Styles.css"
+                       text="Tea Timer" textFill="#8c9178">
+                    <font>
+                        <Font name="Bebas Neue Regular" size="30.0"/>
+                    </font>
+                </Label>
+                <SVGPath
+                        content="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        fill="#8c9178" layoutX="391.0" layoutY="-237.0" onMouseClicked="#closeApp" scaleX="0.05"
+                        scaleY="0.05"/>
+                <SVGPath
+                        content="M32 416c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"
+                        fill="#8c9178" layoutX="289.0" layoutY="-429.0" onMouseClicked="#minimizeApp" scaleX="0.05"
+                        scaleY="0.05"/>
+            </children>
+        </AnchorPane>
+    </top>
+    <right>
+        <AnchorPane prefHeight="318.0" prefWidth="74.0" style="-fx-background-color: #E9EDC9;" styleClass="teaSelect"
+                    BorderPane.alignment="CENTER">
+            <children>
+                <Button id="green" layoutX="10.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleGreenTeaButton"
+                        prefHeight="25.0" prefWidth="95.0" styleClass="teaSelectBtn" text="Green">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="blackS" layoutX="11.0" layoutY="37.0" mnemonicParsing="false"
+                        onAction="#handleBlackSmallLeafTeaButton" prefWidth="95.0" styleClass="teaSelectBtn"
+                        text="Black (small)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="11.5"/>
+                    </font>
+                </Button>
+                <Button id="blackL" layoutX="11.0" layoutY="72.0" mnemonicParsing="false"
+                        onAction="#handleBlackLargeLeafTeaButton" prefWidth="95.0" styleClass="teaSelectBtn"
+                        text="Black (large)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="white" layoutX="11.0" layoutY="107.0" mnemonicParsing="false"
+                        onAction="#handleWhiteTeaButton" prefWidth="95.0" styleClass="teaSelectBtn" text="White">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="yellow" layoutX="11.0" layoutY="142.0" mnemonicParsing="false"
+                        onAction="#handleYellowTeaButton" prefWidth="95.0" styleClass="teaSelectBtn" text="Yellow">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="oolongS" layoutX="11.0" layoutY="177.0" mnemonicParsing="false"
+                        onAction="#handleOolongStripTeaButton" prefHeight="25.0" prefWidth="95.0"
+                        styleClass="teaSelectBtn" text="Oolong (strip)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="11.5"/>
+                    </font>
+                </Button>
+                <Button id="oolongB" layoutX="11.0" layoutY="212.0" mnemonicParsing="false"
+                        onAction="#handleOolongBallTeaButton" prefWidth="95.0" styleClass="teaSelectBtn"
+                        text="Oolong (ball)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="puerRipe" layoutX="11.0" layoutY="246.0" mnemonicParsing="false"
+                        onAction="#handlePuErhRipeTeaButton" prefWidth="95.0" styleClass="teaSelectBtn"
+                        text="Pu-er (ripe)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button id="puerRaw" layoutX="11.0" layoutY="280.0" mnemonicParsing="false"
+                        onAction="#handlePuErhRawTeaButton" prefWidth="95.0" styleClass="teaSelectBtn"
+                        text="Pu-er (raw)">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </right>
+    <center>
+        <VBox alignment="CENTER">
+            <VBox alignment="TOP_CENTER" prefHeight="108.0" prefWidth="493.0">
+                <children>
+                    <Label fx:id="typeLabel" styleClass="typeLabel" text="Tea">
+                        <font>
+                            <Font name="Noto Sans Bold" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="infusionCounts" styleClass="infusionCount" text="Infusions">
+                        <font>
+                            <Font name="Noto Sans Regular" size="12.0"/>
+                        </font>
+                    </Label>
+                </children>
+            </VBox>
+            <Label fx:id="teaType" stylesheets="@Styles.css" text="00:00:00" translateY="-60.0"
+                   BorderPane.alignment="CENTER">
+                <font>
+                    <Font name="Noto Sans Regular" size="35.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets/>
+                </VBox.margin>
+            </Label>
+            <Button fx:id="STARTbtn" mnemonicParsing="false" onAction="#handleStartButton" styleClass="centerBtns"
+                    text="Start" translateY="-20.0">
+                <font>
+                    <Font name="Noto Sans Regular" size="12.0"/>
+                </font>
+            </Button>
+            <HBox alignment="CENTER" spacing="10.0" styleClass="centerHbox">
+                <Button fx:id="previous" onAction="#handlePrevious" styleClass="centerBtns" text="Previous">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="skip" onAction="#handleSkip" styleClass="centerBtns" text="Skip">
+                    <font>
+                        <Font name="Noto Sans Regular" size="12.0"/>
+                    </font>
+                </Button>
+            </HBox>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <left>
+        <VBox alignment="CENTER" prefHeight="318.0" prefWidth="79.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Amount (g):" textFill="#8c9178">
+                    <font>
+                        <Font name="Noto Sans Bold Italic" size="12.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets left="12.0"/>
+                    </VBox.margin>
+                </Label>
+                <Label fx:id="teaAmount" text="0" textFill="#8c9178">
+                    <font>
+                        <Font name="Noto Sans Regular" size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
