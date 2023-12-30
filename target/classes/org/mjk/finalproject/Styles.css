@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+                                                       /* CSS */
+                                                /*    This file is used to style some of the controls and labels    */
+.teaSelect .teaSelectBtn {
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 28px; /* Adjust background radius to fit inside border */
+
+}
+
+#teaType {
+    -fx-font-size: 30px;
+    -fx-font-family: 'Bebas Neue';
+    -fx-text-fill: #8c9178;
+}
+
+.centerHbox .centerBtns{
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 25px; /* Adjust background radius to fit inside border */
+    -fx-padding: 6px 12px;
+}
+.centerBtns{
+    -fx-background-color: #fbeee0;
+    -fx-border-color: #D1C7AE;
+    -fx-border-style: solid;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 30px;
+    -fx-cursor: hand;
+    -fx-background-radius: 25px; /* Adjust background radius to fit inside border */
+    -fx-padding: 6px 12px;
+}
+
+.typeLabel{
+    -fx-text-fill: #8c9178;
+}
+
+.infusionCount{
+    -fx-text-fill: #8c9178;
+}
+/* Styling the ComboBox arrow button */
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0.5em 0.75em;
+}
+
+/* Styling the ComboBox text input area */
+.combo-box .text-input {
+    /*-fx-background-color: #f0f0f0; */
+    -fx-background-color: pink;
+    -fx-background-radius: 4px;
+    -fx-padding: 0.5em;
+    -fx-font-size: 14px;
+    -fx-border-width: 1px;
+    -fx-border-color: #ccc;
+}
+
+/* Styling the ComboBox popup list */
+.combo-box-popup .list-cell {
+    -fx-padding: 5px 10px;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Styling the ComboBox popup */
+.combo-box-popup {
+    -fx-border-width: 1px;
+    -fx-border-color: #ccc;
+}
