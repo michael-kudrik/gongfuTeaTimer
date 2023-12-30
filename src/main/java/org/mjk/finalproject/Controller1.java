@@ -21,19 +21,13 @@ import java.io.IOException;
 
 public class Controller1 {
     int brewTime = 15; //default total time in seconds
-    //audio
-   // File TeaDone = new File("src/main/resources/org/mjk/finalproject/TeaDone.m4a");
-  //  File TeaWarning = new File("src/main/resources/org/mjk/finalproject/WarningTea.m4a");
-  //  Media media = new Media(TeaDone.toURI().toString());
- //   MediaPlayer mediaPl = new MediaPlayer(media);
     String teaDonePath = "/org/mjk/finalproject/TeaDone.m4a";
     String warningTeaPath = "/org/mjk/finalproject/WarningTea.m4a";
     Media teaDone = new Media(getClass().getResource(teaDonePath).toString());
     Media warningTea = new Media(getClass().getResource(warningTeaPath).toString());
     MediaPlayer mediaPl = new MediaPlayer(teaDone);
     MediaPlayer mediaPl2 = new MediaPlayer(warningTea);
-   // File teaDoneFile = new File("src/main/resources/org/mjk/finalproject/TeaDone.mp3");
-   // File teaWarningFile = new File("src/main/resources/org/mjk/finalproject/WarningTea.mp3");
+
     //              Add the fxml elements to controller file
     @FXML
     private Label teaType;
@@ -57,7 +51,6 @@ public class Controller1 {
     //Add borderpane functionality (drag, pressed)
     private double borderX = 0;
     private double borderY = 0;
-
     //methods
     @FXML
     private void borderpane_dragged(MouseEvent event) { //Move borderpane when dragged
@@ -237,7 +230,7 @@ public class Controller1 {
                 mediaPl2.play();
             }
         }));
-        timeline.setCycleCount(brewTime * 1000); // Repeat indefinitely
+        timeline.setCycleCount(Animation.INDEFINITE); // Repeat indefinitely
         timeline.play();
     }
 
