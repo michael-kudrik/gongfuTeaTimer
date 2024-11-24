@@ -7,6 +7,7 @@ December 2023
     <source src="https://github.com/michael-kudrik/gongfuTeaTimer/blob/master/tea_demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+
 ## Table of Contents
 - [About](#about)
 - [How to Run](#how-to-run-the-jar)
