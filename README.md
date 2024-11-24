@@ -3,10 +3,11 @@ Michael Kudrik
 December 2023
 ---
 ## Demo
-<video width="100%" height="auto" controls autoplay loop>
-    <source src="https://github.com/michael-kudrik/gongfuTeaTimer/blob/master/tea_demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+
+
+https://github.com/user-attachments/assets/0726e04c-893e-44fb-8c01-33bd21d93be3
+
+
 
 ## Table of Contents
 - [About](#about)
