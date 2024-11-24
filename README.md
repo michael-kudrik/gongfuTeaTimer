@@ -19,12 +19,13 @@ https://github.com/user-attachments/assets/0726e04c-893e-44fb-8c01-33bd21d93be3
 
 ## About
 This is a basic [Gongfu tea](https://en.wikipedia.org/wiki/Gongfu_tea) timer application written in Java, with Maven. 
+The following instructions were adapted by my peer [CodeByAidan](https://github.com/CodeByAidan/finalproject?tab=readme-ov-file#final-project-for-computer-science-110-lab) and are quite finnicky. You may need to just run the project in an IDE as javaFX can be a pain.
 
 ## How to run the jar
 To run, simply cd into this project directory and then cd into `target/`.
 
 ```bash
-cd path/to/finalproject/
+cd path/to/gongfuTeaTimer/
 cd target/
 ```
 
